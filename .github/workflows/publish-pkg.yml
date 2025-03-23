@@ -28,7 +28,7 @@ jobs:
         run: npm run build
 
       - name: 🧠 Copy clean package.json
-        run: cp ./scripts/api-client-package.json ./dist/
+        run: cp ./scripts/api-client-package.json ./dist/package.json
 
       - name: 🔁 Patch version
         working-directory: ./dist/
