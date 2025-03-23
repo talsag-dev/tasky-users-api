@@ -33,6 +33,12 @@ jobs:
       - name: Show dist folder
         run: ls -la ./dist/api/api-client
 
+      - name: 📦 Check package contents before publish
+        working-directory: ./dist/api/api-client
+        run: |
+          npm pack
+          tar -tf *.tgz
+
       - name: 🔁 Patch version
         working-directory: ./dist/api/api-client
         run: npm version patch --no-git-tag-version
