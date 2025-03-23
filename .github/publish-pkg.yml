@@ -1,4 +1,4 @@
-name: Publish @tasky/api-client
+name: Publish @tasky/users-api-client
 
 on:
   push:
