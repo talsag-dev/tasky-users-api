@@ -30,6 +30,9 @@ jobs:
       - name: 🧠 Copy clean package.json
         run: cp ./scripts/api-client-package.json ./dist/api/api-client/package.json
 
+      - name: Show dist folder
+        run: ls -la ./dist/api/api-client
+
       - name: 🔁 Patch version
         working-directory: ./dist/api/api-client
         run: npm version patch --no-git-tag-version
