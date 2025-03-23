@@ -1,7 +1,7 @@
 {
   "name": "@tasky/users-api",
   "version": "1.0.1",
-  "private": true,
+  "private": false,
   "scripts": {
     "generate": "openapi-ts -i ./openapi.json -o src/api-client -c @hey-api/client-axios",
     "build": "tsc -p tsconfig.api.json",
