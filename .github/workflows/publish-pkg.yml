@@ -3,6 +3,8 @@ name: Publish @tasky/users-api
 on:
   push:
     branches: [main]
+env:
+  NODE_AUTH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
 
 jobs:
   build-and-publish:
