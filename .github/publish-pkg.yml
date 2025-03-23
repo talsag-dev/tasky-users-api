@@ -1,0 +1,45 @@
+name: Publish @tasky/api-client
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/api-client/**"
+      - "openapi.json"
+      - ".github/workflows/publish-api-client.yml"
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v3
+
+      - name: 🟢 Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      - name: 🛠 Build the API client
+        run: npm run build:api # Make sure this outputs to dist/api/api-client
+
+      - name: 🧠 Copy clean package.json
+        run: cp ./scripts/api-client-package.json ./dist/api/api-client/package.json
+
+      - name: 🔁 Patch version
+        working-directory: ./dist/api/api-client
+        run: npm version patch --no-git-tag-version
+
+      - name: 🚀 Publish to npm
+        working-directory: ./dist/api/api-client
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

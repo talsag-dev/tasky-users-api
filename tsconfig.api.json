@@ -3,7 +3,7 @@
     "target": "ES2020",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "rootDir": "src/api",
+    "rootDir": "src/",
     "outDir": "dist/api",
     "declaration": true,
     "emitDeclarationOnly": false,
