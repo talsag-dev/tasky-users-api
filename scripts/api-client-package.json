@@ -1,6 +1,6 @@
 {
   "name": "@tasky/api-client",
-  "version": "1.0.2",
+  "version": "1.0.15",
   "main": "index.js",
   "types": "index.d.ts",
   "exports": {
