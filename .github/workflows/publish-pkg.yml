@@ -1,4 +1,4 @@
-name: Publish @tasky/users-api-client
+name: Publish @tasky/users-api
 
 on:
   push:
@@ -25,7 +25,7 @@ jobs:
         run: npm ci
 
       - name: 🛠 Build the API client
-        run: npm run build:api # Make sure this outputs to dist/api/api-client
+        run: npm run build:api
 
       - name: 🧠 Copy clean package.json
         run: cp ./scripts/api-client-package.json ./dist/api/api-client/package.json
