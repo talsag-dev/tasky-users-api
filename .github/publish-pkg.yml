@@ -3,10 +3,6 @@ name: Publish @tasky/api-client
 on:
   push:
     branches: [main]
-    paths:
-      - "src/api-client/**"
-      - "openapi.json"
-      - ".github/workflows/publish-api-client.yml"
 
 jobs:
   build-and-publish:
