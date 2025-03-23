@@ -1,9 +1,7 @@
 {
   "name": "@talsag-dev/tasky-users-api",
-  "version": "1.0.24",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
+  "version": "0.0.0",
+  "description": "Auto-generated SDK for Tasky Users API",
   "main": "index.js",
   "types": "index.d.ts",
   "exports": {
@@ -13,8 +11,12 @@
       "types": "./index.d.ts"
     }
   },
+  "sideEffects": false,
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "dependencies": {
-    "@hey-api/client-axios": "0.6.2",
-    "axios": "1.6.0"
+    "axios": "^1.6.5"
   }
 }

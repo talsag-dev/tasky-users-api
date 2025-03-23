@@ -3,16 +3,14 @@
   "version": "1.0.1",
   "private": false,
   "scripts": {
-    "generate": "openapi-ts -i ./openapi.json -o src/api-client -c @hey-api/client-axios",
+    "generate": "openapi -i ./openapi.json -o src/ -c axios",
     "build": "tsc -p tsconfig.api.json",
     "prepare:dist": "npm run generate && npm run build && node scripts/copy-package.js"
   },
   "devDependencies": {
-    "@hey-api/openapi-ts": "0.37.2",
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@hey-api/client-axios": "0.6.2",
-    "axios": "1.6.0"
+    "openapi-typescript-codegen": "^0.29.0"
   }
 }

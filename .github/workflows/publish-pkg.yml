@@ -28,23 +28,14 @@ jobs:
         run: npm run build
 
       - name: 🧠 Copy clean package.json
-        run: cp ./scripts/api-client-package.json ./dist/api/api-client/package.json
-
-      - name: Show dist folder
-        run: ls -la ./dist/api/api-client
-
-      - name: 📦 Check package contents before publish
-        working-directory: ./dist/api/api-client
-        run: |
-          npm pack
-          tar -tf *.tgz
+        run: cp ./scripts/api-client-package.json ./dist/
 
       - name: 🔁 Patch version
-        working-directory: ./dist/api/api-client
+        working-directory: ./dist/
         run: npm version patch --no-git-tag-version
 
       - name: 🚀 Publish to npm
-        working-directory: ./dist/api/api-client
+        working-directory: ./dist/
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
