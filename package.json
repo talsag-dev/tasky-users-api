@@ -5,7 +5,7 @@
   "scripts": {
     "generate": "openapi -i ./openapi.json -o src/ -c axios",
     "build": "tsc -p tsconfig.json",
-    "prepare": "npm run generate && npm run build && node scripts/api-client-package.js"
+    "prepare": "npm run generate && npm run build && node scripts/api-client-package.json"
   },
   "devDependencies": {
     "typescript": "^5.0.0"
