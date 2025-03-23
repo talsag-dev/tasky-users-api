@@ -3,8 +3,6 @@ name: Publish @tasky/users-api
 on:
   push:
     branches: [main]
-env:
-  NODE_AUTH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
 
 jobs:
   build-and-publish:
@@ -38,6 +36,6 @@ jobs:
 
       - name: 🚀 Publish to npm
         working-directory: ./dist/api/api-client
-        run: npm publish --access public
+        run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
